@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directorio de Guías</title>
+    
+    <!-- Fuente Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            padding: 60px 20px;
+        }
+
+        #contenedor-principal {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        #cabecera {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .titulo-portal {
+            font-weight: 300;
+            font-size: 2.8em;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .subtitulo-portal {
+            font-weight: 300;
+            font-size: 1.1em;
+            color: #888888;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        #secciones {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .tarjeta {
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        .categoria-titulo {
+            font-weight: 400;
+            font-size: 1.3em;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #222222; 
+            text-transform: uppercase;
+        }
+
+        .grupo-botones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .boton-enlace {
+            background-color: transparent;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 30px 20px;
+            border: 1px solid #333333;
+            border-radius: 0; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .boton-enlace:hover {
+            background-color: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+        }
+
+        .etiqueta-btn {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            color: #777777;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+            font-weight: 400;
+            transition: color 0.4s ease;
+        }
+
+        .boton-enlace:hover .etiqueta-btn {
+            color: #333333;
+        }
+
+        #pie-portal {
+            text-align: center;
+            margin-top: 80px;
+            color: #444444;
+            font-size: 0.8em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="contenedor-principal">
+        <header id="cabecera">
+            <h1 class="titulo-portal">Portafolio Web</h1>
+            <h2 class="subtitulo-portal">Directorio de Guías</h2>
+        </header>
+
+        <main id="secciones">
+            <section class="tarjeta">
+                <h3 class="categoria-titulo">Listado de Actividades</h3>
+                
+                <div class="grupo-botones">
+                    <a href="Guía 1/index.html" class="boton-enlace">
+                        <span class="etiqueta-btn">Actividad</span>
+                        Guía 1
+                    </a>
+
+                    <a href="guia2/index.html" class="boton-enlace">
+                        <span class="etiqueta-btn">Actividad</span>
+                        Guía 2
+                    </a>
+
+                    <a href="guia3/index.html" class="boton-enlace">
+                        <span class="etiqueta-btn">Actividad</span>
+                        Guía 3
+                    </a>
+
+                    <a href="guia4/index.html" class="boton-enlace">
+                        <span class="etiqueta-btn">Actividad</span>
+                        Guía 4
+                    </a>
+
+                    <a href="guia5/index.html" class="boton-enlace">
+                        <span class="etiqueta-btn">Actividad</span>
+                        Guía 5
+                    </a>
+
+                    <a href="guia6/index.html" class="boton-enlace">
+                        <span class="etiqueta-btn">Actividad</span>
+                        Guía 6
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer id="pie-portal">
+            &copy; 2026 Gerardo Ismael Jacinto Cruz. Todos los derechos reservados.
+        </footer>
+    </div>
+
+</body>
+</html>
