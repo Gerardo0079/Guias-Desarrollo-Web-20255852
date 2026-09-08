@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Grecia Real | San Salvador</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para los Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ================= VARIABLES Y RESET ================= */
+        :root {
+            --primary-color: #003366; /* Azul elegante */
+            --accent-color: #D4AF37; /* Dorado para las estrellas y botones */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ================= NAVEGACIÓN ================= */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-reservar {
+            background-color: var(--accent-color);
+            color: var(--white) !important;
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+
+        .btn-reservar:hover {
+            background-color: #b5952f;
+        }
+
+        /* ================= HERO SECTION (PORTADA) ================= */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 0, 0, 0.5)), 
+                        url('https://images.unsplash.com/photo-1542314831-c6a4d14b8fc4?auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-inline: auto;
+            font-weight: 300;
+        }
+
+        .stars {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-main {
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            background-color: #b5952f;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ================= TÍTULOS DE SECCIÓN ================= */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--accent-color);
+        }
+
+        /* ================= AMENIDADES ================= */
+        .amenities {
+            padding: 80px 5%;
+            background-color: var(--bg-light);
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .amenity-card {
+            background: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .amenity-card i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        .amenity-card h3 {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .amenity-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* ================= HABITACIONES ================= */
+        .rooms {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .room-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .room-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .room-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .room-info {
+            padding: 30px;
+        }
+
+        .room-info h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .room-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .room-price small {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .room-info ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .room-info ul li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .room-info ul li i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .btn-outline {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* ================= EVENTOS ================= */
+        .events {
+            padding: 80px 5%;
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        .events-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .events-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .events-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .events-text h2 span {
+            color: var(--accent-color);
+        }
+
+        .events-text p {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        .events-text ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .events-text ul li {
+            font-size: 1rem;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .events-text ul li i {
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
+
+        .events-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .events-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        /* ================= FOOTER (PIE DE PÁGINA) ================= */
+        footer {
+            background-color: #1a1a1a;
+            color: #cccccc;
+            padding: 60px 5% 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: auto;
+            border-bottom: 1px solid #333;
+            padding-bottom: 40px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footer-col p i {
+            color: var(--accent-color);
+            margin-top: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--white);
+            background: #333;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* ================= DISEÑO RESPONSIVO ================= */
+        @media(max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .events-text ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado / Menú -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-hotel"></i> Grecia Real
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#habitaciones">Habitaciones</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="https://wa.me/50369826919" class="btn-reservar" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Reservar
+            </a>
+        </nav>
+    </header>
+
+    <!-- Portada Principal (Hero) -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="stars">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <h1>El Confort Que Mereces en San Salvador</h1>
+            <p>Hotel de 3 estrellas ubicado en la Zona Real, a solo 80 metros de Metrocentro. 50 cómodas habitaciones diseñadas para tu descanso y negocios.</p>
+            <a href="#habitaciones" class="btn-main">Ver Habitaciones</a>
+        </div>
+    </section>
+
+    <!-- ¿Qué nos distingue? (Amenidades) -->
+    <section class="amenities" id="servicios">
+        <h2 class="section-title">¿Qué nos <span>Distingue?</span></h2>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <i class="fa-solid fa-mug-hot"></i>
+                <h3>Desayuno Incluido</h3>
+                <p>Comienza tu día de la mejor manera con nuestro desayuno tipo buffet de cortesía.</p>
+            </div>
+            <div class="amenity-card">
+                <i class="fa-solid fa-water-ladder"></i>
+                <h3>Piscina y Relax</h3>
+                <p>Acceso exclusivo a nuestras áreas verdes y piscina para relajarse cómodamente.</p>
+            </div>
+            <div class="amenity-card">
+                <i class="fa-solid fa-car-side"></i>
+                <h3>Parqueo 24 Horas</h3>
+                <p>Seguridad y estacionamiento privado disponible las 24 horas del día.</p>
+            </div>
+            <div class="amenity-card">
+                <i class="fa-solid fa-truck-medical"></i>
+                <h3>Asistencia Médica</h3>
+                <p>Servicio de ambulancia y primeros auxilios sin costo para su tranquilidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habitaciones Destacadas -->
+    <section class="rooms" id="habitaciones">
+        <h2 class="section-title">Nuestras <span>Habitaciones</span></h2>
+        <div class="rooms-grid">
+            
+            <!-- Habitación 1 -->
+            <div class="room-card">
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80" alt="Sencilla Económica">
+                <div class="room-info">
+                    <h3>Sencilla Económica</h3>
+                    <span class="room-price">$38.00 <small>/ noche</small></span>
+                    <ul>
+                        <li><i class="fa-solid fa-bed"></i> 1 Cama semi-matrimonial</li>
+                        <li><i class="fa-solid fa-fan"></i> Ventilador de techo</li>
+                        <li><i class="fa-solid fa-wifi"></i> Wi-Fi Ilimitado</li>
+                        <li><i class="fa-solid fa-tv"></i> TV por Cable</li>
+                    </ul>
+                    <a href="#" class="btn-outline">Saber más</a>
+                </div>
+            </div>
+
+            <!-- Habitación 2 -->
+            <div class="room-card">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Doble">
+                <div class="room-info">
+                    <h3>Habitación Doble</h3>
+                    <span class="room-price">$86.00 <small>/ noche</small></span>
+                    <ul>
+                        <li><i class="fa-solid fa-bed"></i> 2 Camas matrimoniales</li>
+                        <li><i class="fa-solid fa-snowflake"></i> Aire Acondicionado</li>
+                        <li><i class="fa-solid fa-wifi"></i> Wi-Fi Ilimitado</li>
+                        <li><i class="fa-solid fa-tv"></i> TV por Cable</li>
+                    </ul>
+                    <a href="#" class="btn-outline">Saber más</a>
+                </div>
+            </div>
+
+            <!-- Habitación 3 -->
+            <div class="room-card">
+                <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?auto=format&fit=crop&w=800&q=80" alt="Quíntuple">
+                <div class="room-info">
+                    <h3>Habitación Quíntuple</h3>
+                    <span class="room-price">$87.00 <small>/ noche</small></span>
+                    <ul>
+                        <li><i class="fa-solid fa-bed"></i> 5 Camas individuales</li>
+                        <li><i class="fa-solid fa-snowflake"></i> Aire Acondicionado</li>
+                        <li><i class="fa-solid fa-users"></i> Ideal para familias o grupos</li>
+                        <li><i class="fa-solid fa-wifi"></i> Wi-Fi Ilimitado</li>
+                    </ul>
+                    <a href="#" class="btn-outline">Saber más</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Eventos -->
+    <section class="events" id="eventos">
+        <div class="events-container">
+            <div class="events-text">
+                <h2>Salones para <span>Eventos</span></h2>
+                <p>Si busca estancias con buena acústica, iluminación y el mobiliario adecuado para sus eventos sociales (bodas, fiestas, graduaciones) o empresariales (seminarios, conferencias), nosotros somos su mejor opción.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Terraza (hasta 120 pax)</li>
+                    <li><i class="fa-solid fa-check"></i> Salón Eliseos (hasta 20 pax)</li>
+                    <li><i class="fa-solid fa-check"></i> Salón Cleopatra (hasta 37 pax)</li>
+                    <li><i class="fa-solid fa-check"></i> Salón Partenón (hasta 70 pax)</li>
+                </ul>
+            </div>
+            <div class="events-image">
+                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80" alt="Eventos Hotel Grecia Real">
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Acerca de Nosotros</h3>
+                <p>Hotel Grecia Real S.A. de C.V. es tu opción ideal en la capital salvadoreña. Nos esmeramos por ofrecer atención personalizada y un ambiente familiar.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto Rápido</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Calle Sisimiles 2922. Col. Miramonte, San Salvador, El Salvador.</p>
+                <p><i class="fa-solid fa-phone"></i> PBX: (503) 2526-4400</p>
+                <p><i class="fa-brands fa-whatsapp"></i> Whatsapp: (503) 6982-6919</p>
+                <p><i class="fa-solid fa-envelope"></i> mercadeo.greciareal@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Síguenos</h3>
+                <p>Descubre nuestras promociones y galería en redes sociales:</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Hotel Grecia Real El Salvador. Todos los derechos reservados. Diseño rediseñado.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

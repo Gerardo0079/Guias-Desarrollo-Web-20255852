@@ -1,0 +1,179 @@
+
+body {
+    background-color: #07090f; 
+    color: #d1d5db;
+    font-family: 'Lato', Arial, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 20px;
+}
+
+#contenedor {
+    width: 90%;
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #11141c; 
+    padding: 35px;
+    border-radius: 10px;
+    border: 2px solid #1f2937; 
+}
+
+#encabezado {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.titulo {
+    font-family: 'Cinzel', serif;
+    color: #e11d48;
+    font-size: 3.5em;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin: 0 0 5px 0;
+}
+
+.subtitulo {
+    font-family: 'Cinzel', serif;
+    color: #0ea5e9; 
+    font-size: 1.25em;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#banner {
+    text-align: center;
+    margin: 25px 0;
+}
+
+.imagen-serie {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    border: 2px solid #0ea5e9; 
+}
+
+.seccion-titulo {
+    font-family: 'Cinzel', serif;
+    color: #f8fafc;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e11d48; 
+    padding-bottom: 6px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.parrafo {
+    font-size: 16px;
+    text-align: justify;
+    color: #9ca3af;
+    margin-bottom: 15px;
+}
+
+.resaltado-piltover {
+    color: #0ea5e9; 
+    font-weight: bold;
+}
+
+.resaltado-zaun {
+    color: #e11d48; 
+    font-weight: bold;
+}
+
+.personaje {
+    font-weight: bold;
+    color: #f8fafc; 
+}
+
+.tabla-personajes {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+.tabla-personajes th,
+.tabla-personajes td {
+    border: 1px solid #1f2937;
+    padding: 12px;
+    text-align: center;
+}
+
+.tabla-personajes th {
+    font-family: 'Cinzel', serif;
+    background-color: #0f1219;
+    color: #0ea5e9; 
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tabla-personajes td {
+    color: #d1d5db;
+}
+
+#ficha {
+    background-color: #0f1219;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #0ea5e9; 
+    margin-top: 25px;
+}
+
+.dato {
+    font-size: 15px;
+    margin: 8px 0;
+    color: #9ca3af;
+}
+
+.etiqueta {
+    color: #e11d48; 
+    font-weight: bold;
+}
+
+#enlace-oficial {
+    text-align: center;
+    margin: 35px 0 20px 0;
+}
+
+.boton-enlace {
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+    background-color: #e11d48; 
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 12px 25px;
+    border-radius: 6px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid #e11d48;
+    transition: all 0.3s ease;
+}
+
+.boton-enlace:hover {
+    background-color: #0ea5e9;
+    border-color: #0ea5e9;
+    color: #000000;
+}
+
+footer {
+    border-top: 1px solid #1f2937;
+    margin-top: 30px;
+    padding-top: 15px;
+}
+
+.pie-pagina {
+    font-size: 13px;
+    text-align: center;
+    color: #4b5563;
+    font-style: italic;
+    margin: 0;
+}
