@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Habitaciones y tarifas del Hotel Grecia Real en San Salvador, El Salvador.">
+  <title>Habitaciones | Hotel Grecia Real</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --color-rausch: #ff385c;
+      --color-rausch-600: #e00b41;
+      --color-hof: #222222;
+      --color-foggy: #6a6a6a;
+      --color-grey-500: #c1c1c1;
+      --color-bebe: #ebebeb;
+      --color-deco: #dddddd;
+      --color-faint: #f7f7f7;
+      --color-white: #ffffff;
+
+      --font-airbnb-cereal-vf: "DM Sans", ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+      --text-caption: 11px;
+      --text-ui: 16px;
+      --text-subheading: 20px;
+      --text-heading-sm: 22px;
+      --text-heading: 28px;
+
+      --leading-caption: 1.18;
+      --leading-ui: 1.25;
+      --leading-subheading: 1.2;
+      --leading-heading-sm: 1.18;
+      --leading-heading: 1.43;
+
+      --spacing-4: 4px;
+      --spacing-8: 8px;
+      --spacing-12: 12px;
+      --spacing-16: 16px;
+      --spacing-20: 20px;
+      --spacing-24: 24px;
+      --spacing-28: 28px;
+      --spacing-32: 32px;
+      --spacing-40: 40px;
+      --spacing-44: 44px;
+      --spacing-48: 48px;
+
+      --radius-cards: 12px;
+      --radius-inputs: 8px;
+      --radius-buttons: 9999px;
+      --radius-full: 9999px;
+
+      --shadow-subtle:
+        rgba(0, 0, 0, 0.02) 0px 0px 0px 1px,
+        rgba(0, 0, 0, 0.04) 0px 2px 6px 0px,
+        rgba(0, 0, 0, 0.10) 0px 4px 8px 0px;
+
+      --page-max-width: 1440px;
+      --section-gap: 48px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--color-faint);
+      color: var(--color-hof);
+      font-family: var(--font-airbnb-cereal-vf);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.43;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(100% - 80px, var(--page-max-width));
+      margin-inline: auto;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      min-height: 80px;
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-bebe);
+    }
+
+    .nav-container {
+      width: min(100% - 80px, var(--page-max-width));
+      min-height: 80px;
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--spacing-24);
+    }
+
+    .logo a,
+    .footer-logo {
+      font-size: 21px;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .logo span,
+    .footer-logo span {
+      color: var(--color-rausch);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-28);
+      list-style: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--color-foggy);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 28px 0;
+      transition: color .2s ease, transform .2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 18px;
+      height: 2px;
+      background: var(--color-hof);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--color-hof);
+      transform: scale(1.02);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    /* =========================
+       BOTONES
+    ========================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-8);
+      min-height: 44px;
+      padding: 0 var(--spacing-20);
+      border-radius: var(--radius-buttons);
+      font-size: 14px;
+      font-weight: 500;
+      transition:
+        background-color .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+    }
+
+    .btn-rausch {
+      background: var(--color-rausch);
+      color: var(--color-white);
+    }
+
+    .btn-rausch:hover {
+      background: var(--color-rausch-600);
+      transform: scale(1.03);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--color-hof);
+      color: var(--color-hof);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--color-faint);
+      transform: scale(1.03);
+    }
+
+    .btn-nav {
+      min-height: 40px;
+      padding-inline: 16px;
+    }
+
+    /* =========================
+       PAGE HEADER
+    ========================= */
+    .page-header {
+      padding: 64px 0 56px;
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-bebe);
+      animation: pageHeaderIn .7s ease both;
+    }
+
+    @keyframes pageHeaderIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .page-header-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--color-foggy);
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: var(--spacing-12);
+    }
+
+    .page-header h1 {
+      font-size: var(--text-heading);
+      line-height: var(--leading-heading);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: var(--spacing-12);
+    }
+
+    .page-header p {
+      max-width: 680px;
+      color: var(--color-foggy);
+      font-size: 16px;
+    }
+
+    /* =========================
+       HABITACIONES
+    ========================= */
+    .rooms-section {
+      padding-block: var(--section-gap);
+    }
+
+    .section-title {
+      margin-bottom: var(--spacing-28);
+      max-width: 760px;
+    }
+
+    .section-title h2 {
+      font-size: var(--text-heading-sm);
+      font-weight: 500;
+      line-height: var(--leading-heading-sm);
+      letter-spacing: -0.44px;
+      margin-bottom: var(--spacing-12);
+    }
+
+    .section-title p {
+      color: var(--color-foggy);
+    }
+
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--spacing-12);
+    }
+
+    .room-card {
+      background: var(--color-white);
+      border-radius: var(--radius-cards);
+      overflow: hidden;
+    }
+
+    .card-image {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: var(--radius-cards);
+    }
+
+    .card-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    .room-card:hover .card-image img {
+      transform: scale(1.03);
+    }
+
+    .price-tag {
+      position: absolute;
+      left: 12px;
+      bottom: 12px;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      background: var(--color-white);
+      color: var(--color-hof);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .price-tag span {
+      color: var(--color-foggy);
+      font-weight: 400;
+    }
+
+    .card-content {
+      padding: var(--spacing-16) 12px 20px;
+    }
+
+    .card-content h3 {
+      font-size: 20px;
+      line-height: var(--leading-subheading);
+      font-weight: 600;
+      margin-bottom: var(--spacing-8);
+    }
+
+    .description {
+      color: var(--color-foggy);
+      margin-bottom: var(--spacing-16);
+      min-height: 60px;
+    }
+
+    /* =========================
+       TABLA DE TARIFAS
+    ========================= */
+    .rates-section {
+      padding-block: 0 var(--section-gap);
+    }
+
+    .rates-wrapper {
+      background: var(--color-white);
+      border-radius: var(--radius-cards);
+      padding: var(--spacing-24);
+    }
+
+    .rates-title {
+      font-size: var(--text-subheading);
+      line-height: var(--leading-subheading);
+      font-weight: 600;
+      margin-bottom: var(--spacing-8);
+    }
+
+    .rates-intro {
+      color: var(--color-foggy);
+      margin-bottom: var(--spacing-20);
+    }
+
+    .rates-table-container {
+      overflow-x: auto;
+    }
+
+    .rates-table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+    }
+
+    .rates-table th,
+    .rates-table td {
+      padding: var(--spacing-16);
+      text-align: left;
+      border-bottom: 1px solid var(--color-bebe);
+    }
+
+    .rates-table th {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-hof);
+      background: var(--color-faint);
+    }
+
+    .rates-table th:first-child {
+      border-radius: 8px 0 0 8px;
+    }
+
+    .rates-table th:last-child {
+      border-radius: 0 8px 8px 0;
+    }
+
+    .rates-table td {
+      color: var(--color-foggy);
+    }
+
+    .rates-table td:last-child {
+      color: var(--color-hof);
+      font-weight: 600;
+    }
+
+    .rates-table tbody tr {
+      transition: background-color .2s ease;
+    }
+
+    .rates-table tbody tr:hover {
+      background: var(--color-faint);
+    }
+
+    /* =========================
+       EVENTOS
+    ========================= */
+    .events-section {
+      padding-block: var(--section-gap);
+      background: var(--color-white);
+    }
+
+    .events-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-48);
+      align-items: center;
+    }
+
+    .events-text h2 {
+      font-size: var(--text-heading-sm);
+      line-height: var(--leading-heading-sm);
+      font-weight: 500;
+      letter-spacing: -0.44px;
+      margin-bottom: var(--spacing-16);
+    }
+
+    .events-text > p {
+      color: var(--color-foggy);
+      margin-bottom: var(--spacing-16);
+    }
+
+    .events-list {
+      display: grid;
+      gap: var(--spacing-12);
+      list-style: none;
+      margin-top: var(--spacing-24);
+    }
+
+    .events-list li {
+      display: flex;
+      gap: var(--spacing-12);
+      align-items: flex-start;
+    }
+
+    .events-list i {
+      color: var(--color-hof);
+      margin-top: 3px;
+    }
+
+    .events-list strong {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .events-list span {
+      color: var(--color-foggy);
+    }
+
+    .events-image img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius-cards);
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+    .footer {
+      background: var(--color-faint);
+      padding-top: var(--section-gap);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: var(--spacing-48);
+      padding-bottom: var(--spacing-40);
+    }
+
+    .brand-col p {
+      color: var(--color-foggy);
+      max-width: 380px;
+      margin-top: var(--spacing-16);
+    }
+
+    .social-links {
+      display: flex;
+      gap: var(--spacing-8);
+      margin-top: var(--spacing-20);
+    }
+
+    .social-links a {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-full);
+      transition: background-color .2s ease, transform .2s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--color-deco);
+      transform: scale(1.05);
+    }
+
+    .footer-col h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: var(--spacing-16);
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: grid;
+      gap: var(--spacing-12);
+    }
+
+    .footer-col li,
+    .footer-col li a {
+      color: var(--color-foggy);
+    }
+
+    .footer-col li {
+      display: flex;
+      gap: var(--spacing-8);
+      align-items: flex-start;
+    }
+
+    .footer-col li i {
+      width: 16px;
+      margin-top: 3px;
+      color: var(--color-hof);
+    }
+
+    .links-col li a:hover {
+      color: var(--color-hof);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--color-bebe);
+      padding-block: var(--spacing-20);
+    }
+
+    .footer-bottom p {
+      color: var(--color-foggy);
+      font-size: 13px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+    @media (max-width: 900px) {
+      .container,
+      .nav-container {
+        width: min(100% - 40px, var(--page-max-width));
+      }
+
+      .nav-links {
+        gap: var(--spacing-16);
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .rooms-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .events-content {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .navbar {
+        min-height: auto;
+      }
+
+      .nav-container {
+        min-height: 72px;
+        flex-wrap: wrap;
+        padding-block: 12px;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      .nav-links {
+        width: max-content;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        padding: 8px 0 12px;
+      }
+
+      .nav-links a::after {
+        bottom: 4px;
+      }
+
+      .container {
+        width: min(100% - 32px, var(--page-max-width));
+      }
+
+      .page-header {
+        padding: 48px 0;
+      }
+
+      .rooms-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .description {
+        min-height: auto;
+      }
+
+      .rates-wrapper {
+        padding: var(--spacing-16);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- =========================
+       HEADER / NAVBAR
+  ========================== -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html" aria-label="Hotel Grecia Real - Inicio">
+          Grecia Real<span>.</span>
+        </a>
+      </div>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="habitaciones.html" class="active" aria-current="page">Habitaciones</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a
+          href="https://wa.me/50369826919"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-rausch btn-nav"
+        >
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          Reserva Ahora
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================
+         CABECERA DE PÁGINA
+    ========================== -->
+    <section class="page-header">
+      <div class="container page-header-content">
+        <span class="eyebrow">Hotel Grecia Real · San Salvador</span>
+        <h1>Nuestras Habitaciones</h1>
+        <p>
+          Descubra nuestras opciones de alojamiento, pensadas para ofrecer
+          comodidad y una estancia agradable a familias, viajeros y grupos de trabajo.
+        </p>
+      </div>
+    </section>
+
+    <!-- =========================
+         HABITACIONES DESTACADAS
+    ========================== -->
+    <section class="rooms-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Opciones de Alojamiento</h2>
+          <p>
+            Nuestras opciones le permiten disfrutar con la familia por un precio módico.
+            <strong>Entrada: 2:00 PM | Salida: 1:00 PM</strong>
+          </p>
+        </div>
+
+        <div class="rooms-grid">
+          <!-- Sencilla Normal -->
+          <article class="room-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80"
+                alt="Habitación Sencilla Normal"
+                loading="lazy"
+              >
+              <div class="price-tag">
+                $52.00 <span>/noche</span>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h3>Sencilla Normal</h3>
+              <p class="description">
+                1 cama matrimonial, baño privado, TV con cable y aire acondicionado.
+              </p>
+              <a
+                href="https://wa.me/50369826919"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+              >
+                Reservar
+              </a>
+            </div>
+          </article>
+
+          <!-- Habitación Doble -->
+          <article class="room-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+                alt="Habitación Doble"
+                loading="lazy"
+              >
+              <div class="price-tag">
+                $86.00 <span>/noche</span>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h3>Habitación Doble</h3>
+              <p class="description">
+                2 camas matrimoniales, ideal para familias o grupos de trabajo. A/C incluido.
+              </p>
+              <a
+                href="https://wa.me/50369826919"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+              >
+                Reservar
+              </a>
+            </div>
+          </article>
+
+          <!-- King Size -->
+          <article class="room-card">
+            <div class="card-image">
+              <img
+                src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80"
+                alt="Habitación King Size"
+                loading="lazy"
+              >
+              <div class="price-tag">
+                $88.00 <span>/noche (2 pax)</span>
+              </div>
+            </div>
+
+            <div class="card-content">
+              <h3>King Size</h3>
+              <p class="description">
+                1 cama King Size (2x2). Máximo confort y espacio. Tarifa individual: $78.00.
+              </p>
+              <a
+                href="https://wa.me/50369826919"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+              >
+                Reservar
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         INVENTARIO DE TARIFAS
+    ========================== -->
+    <section class="rates-section">
+      <div class="container">
+        <div class="rates-wrapper">
+          <h2 class="rates-title">Inventario Completo de Tarifas</h2>
+          <p class="rates-intro">
+            Tarifas con desayuno incluido según el tipo de habitación.
+          </p>
+
+          <div class="rates-table-container">
+            <table class="rates-table">
+              <thead>
+                <tr>
+                  <th>Tipo de Habitación</th>
+                  <th>Distribución de Camas</th>
+                  <th>Tarifa (Inc. Desayuno)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sencilla Económica</td>
+                  <td>1 semi-matrimonial (Ventilador)</td>
+                  <td>$38.00</td>
+                </tr>
+                <tr>
+                  <td>Sencilla</td>
+                  <td>1 semi-matrimonial (A/C)</td>
+                  <td>$48.00</td>
+                </tr>
+                <tr>
+                  <td>Doble Económica</td>
+                  <td>2 camas individuales</td>
+                  <td>$58.00</td>
+                </tr>
+                <tr>
+                  <td>Triple Económica</td>
+                  <td>3 camas individuales</td>
+                  <td>$79.00</td>
+                </tr>
+                <tr>
+                  <td>Triple</td>
+                  <td>2 camas matrimoniales</td>
+                  <td>$96.00</td>
+                </tr>
+                <tr>
+                  <td>Cuádruple</td>
+                  <td>2 camas matrimoniales</td>
+                  <td>$106.00</td>
+                </tr>
+                <tr>
+                  <td>Quíntuple</td>
+                  <td>5 camas individuales</td>
+                  <td>$87.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         EVENTOS
+    ========================== -->
+    <section class="events-section">
+      <div class="container">
+        <div class="events-content">
+          <div class="events-text">
+            <h2>Salones para Eventos</h2>
+
+            <p>
+              Celebre sus <strong>eventos sociales</strong> (Bodas, Fiestas Rosa,
+              1a Comunión, Baby Shower, Bautizos, Graduaciones) o
+              <strong>eventos empresariales</strong> (Seminarios, Conferencias,
+              Juntas Directivas).
+            </p>
+
+            <p>
+              Ofrecemos estancias con buena acústica, iluminación y el mobiliario
+              adecuado para una máxima comodidad.
+            </p>
+
+            <ul class="events-list">
+              <li>
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                <div>
+                  <strong>Terraza</strong>
+                  <span>Áreas de piscina (120 personas). Zona techada (60 personas).</span>
+                </div>
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                <div>
+                  <strong>Salón Partenón</strong>
+                  <span>70 tipo auditorio, o 40 en montaje "U" tipo seminario.</span>
+                </div>
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                <div>
+                  <strong>Salón Cleopatra</strong>
+                  <span>Acomoda hasta 37 tipo auditorio, o 17 en mesas de trabajo.</span>
+                </div>
+              </li>
+
+              <li>
+                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                <div>
+                  <strong>Salón Eliseos</strong>
+                  <span>20 personas tipo auditorio, o 15 personas con mesas de trabajo.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="events-image">
+            <img
+              src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80"
+              alt="Salón para eventos del Hotel Grecia Real"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="footer-logo">
+          Grecia Real<span>.</span>
+        </a>
+
+        <p>
+          Hotel Grecia Real SA de CV. Su mejor opción en hospedaje de categoría
+          tres estrellas en San Salvador.
+        </p>
+
+        <div class="social-links" aria-label="Redes sociales">
+          <a href="#" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="Instagram">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col contact-col">
+        <h3>Contáctenos</h3>
+        <ul>
+          <li>
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span>Calle Sisimiles 2922. Col. Miramonte, San Salvador, El Salvador, C.A.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <span>PBX: (503) 2526-4400</span>
+          </li>
+          <li>
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            <span>Whatsapp: (503) 6982-6919</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <span>mercadeo.greciareal@gmail.com</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col links-col">
+        <h3>Enlaces Rápidos</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="habitaciones.html" aria-current="page">Habitaciones</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Hotel Grecia Real El Salvador. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
