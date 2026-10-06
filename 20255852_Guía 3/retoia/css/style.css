@@ -1,0 +1,554 @@
+/* ============================================= */
+/* VARIABLES Y RESET                             */
+/* ============================================= */
+:root {
+    --bg-color: #f8f9fa;
+    --text-dark: #1a1a1a;
+    --text-light: #6b7280;
+    --accent-pink: #e63946; /* Color rosa/rojo del logo y botones */
+    --white: #ffffff;
+    --border-color: #e5e7eb;
+    --font-family: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ============================================= */
+/* ESTRUCTURA PRINCIPAL CON CSS GRID             */
+/* ============================================= */
+/* 
+   REQUISITO DE LA RÚBRICA: 
+   Se utiliza CSS Grid para la distribución principal de toda la página.
+   La clase .page-grid divide la página en 7 filas (una por sección:
+   header, hero, servicios, habitaciones, eventos, contacto y footer)
+   y utiliza "gap" para crear una separación uniforme de 40px entre ellas.
+*/
+.page-grid {
+    display: grid;
+    grid-template-rows: repeat(7, auto); /* 7 filas: una por cada sección */
+    gap: 40px; /* Separación entre secciones */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================= */
+/* ENCABEZADO (HEADER)                           */
+/* ============================================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background-color: var(--bg-color);
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+}
+
+.logo .dot {
+    color: var(--accent-pink);
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.main-nav a {
+    font-weight: 500;
+    color: var(--text-light);
+    padding-bottom: 4px;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    color: var(--text-dark);
+    border-bottom: 2px solid var(--text-dark);
+}
+
+/* ============================================= */
+/* BOTONES OVALADOS (PÍLDORA)                    */
+/* ============================================= */
+.btn-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border-radius: 50px; /* Forma de píldora */
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-whatsapp {
+    background-color: var(--accent-pink);
+    color: var(--white);
+}
+
+.btn-whatsapp:hover {
+    background-color: #c1121f;
+}
+
+.btn-pink {
+    background-color: var(--accent-pink);
+    color: var(--white);
+    padding: 12px 28px;
+    font-size: 1rem;
+}
+
+.btn-pink:hover {
+    background-color: #c1121f;
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 12px 28px;
+    font-size: 1rem;
+}
+
+.btn-outline-white:hover {
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+.btn-outline-dark {
+    background-color: transparent;
+    color: var(--text-dark);
+    border: 2px solid var(--text-dark);
+}
+
+.btn-outline-dark:hover {
+    background-color: var(--text-dark);
+    color: var(--white);
+}
+
+/* ============================================= */
+/* PORTADA (HERO)                                */
+/* ============================================= */
+.hero {
+    position: relative;
+    background-image: url('../images/hero-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); /* Capa oscura para que el texto sea legible */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 40px 20px;
+}
+
+.stars {
+    color: #fbbf24; /* Color dorado para las estrellas */
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.hero-location {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.5;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* ============================================= */
+/* SECCIONES GENERALES                           */
+/* ============================================= */
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: var(--text-dark);
+}
+
+/* ============================================= */
+/* SERVICIOS                                     */
+/* ============================================= */
+/* 
+   CSS GRID: "repeat(5, 1fr)" crea 5 columnas del mismo tamaño,
+   una para cada servicio. "gap" separa las tarjetas.
+*/
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columnas iguales */
+    gap: 20px;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* ============================================= */
+/* HABITACIONES                                  */
+/* ============================================= */
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+}
+
+.room-card {
+    background-color: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.room-img-container {
+    position: relative;
+    height: 220px;
+}
+
+.room-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Etiqueta de precio flotante sobre la imagen */
+.price-tag {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    background-color: var(--white);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.room-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.room-info p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* ============================================= */
+/* EVENTOS                                       */
+/* ============================================= */
+/* 
+   CSS GRID: Se utiliza para dividir la sección en dos columnas (texto e imagen).
+   "grid-template-columns: 1fr 1fr" crea dos columnas de igual tamaño.
+*/
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.events-text p {
+    margin-bottom: 15px;
+    color: var(--text-light);
+}
+
+.events-list {
+    margin-top: 20px;
+    display: grid;
+    gap: 15px;
+}
+
+.events-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.check-icon {
+    color: var(--accent-pink);
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.events-list strong {
+    display: block;
+    color: var(--text-dark);
+}
+
+.events-list p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.events-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* ============================================= */
+/* SECCIÓN DE CONTACTO                           */
+/* ============================================= */
+.contact-section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.contact-tag {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.contact-title {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.contact-desc {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* 
+   CSS GRID: "repeat(3, 1fr)" crea 3 columnas del mismo tamaño,
+   una para cada tarjeta de contacto.
+*/
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+    gap: 20px;
+}
+
+.contact-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 16px;
+    text-align: left;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+/* ============================================= */
+/* PIE DE PÁGINA (FOOTER)                        */
+/* ============================================= */
+/* 
+   CSS GRID: El pie de página se divide en 3 columnas.
+   "grid-template-columns: 1fr 1fr 1fr" crea las tres columnas.
+*/
+.footer {
+    background-color: var(--white);
+    padding: 60px 40px 20px 40px;
+    border-radius: 20px 20px 0 0;
+    margin-top: 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.footer-column p, .footer-column ul {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    transition: color 0.3s;
+}
+
+.footer-column a:hover {
+    color: var(--accent-pink);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* ============================================= */
+/* RESPONSIVE (MEDIA QUERIES)                    */
+/* ============================================= */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* En pantallas pequeñas, estas cuadrículas pasan a una sola columna */
+    .services-grid,
+    .rooms-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
